@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Red+Hat+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="contentMax">
+
+    <div class="contentTitle">
+      <div class="img-content">
+        <img src="../../../assets/iconoF.png">
+        <h3>Create a new account</h3>
+      </div>
+    </div>
+    
+    <div class="contentMin">
+      <form action="" class="formularioLogin">
+        <div class="email">
+          <article>
+            <img class="icon" src="../../../assets/person-outline.svg">
+          </article>
+          <input type="text" (change)="handleNameInputChange($event)" required>
+          <label>Full Name</label>
+        </div>
+        <div class="email">
+          <article>
+            <img class="icon" src="../../../assets/mail-outline.svg">
+          </article>
+          <input type="text" (change)="handleEmailInputChange($event)" required>
+          <label>Email</label>
+        </div>
+        <div class="email">
+          <article>
+            <img class="icon" src="../../../assets/lock-closed-outline.svg">
+          </article>
+          <input type="password" (change)="handlePasswordInputChange($event)" required>
+          <label>Password</label>
+        </div>
+      </form>
+      <div class="conetntBtn">
+        <button (click)="handleRegisterClick()">Register</button>
+        <a [routerLink]="['/login']">Already have an account?</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Cosas restantes:
+    - Vista de New Post View
+    - Crear los componentes
+    * FeedView
+        - Iconos de + y de buscar
+        - Iconos de like y favorito
+    
+    * Login 
+        - Iconos de estilo
+        - Icono de la X
+        - Terminar con los estilos
+        - 
+    
