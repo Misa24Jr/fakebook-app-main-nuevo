@@ -1,18 +1,18 @@
 .modal{
-    width: 90%;
+    width: 100%;
     background: #E5E5E5;
     height: 90%;
     position: absolute;
     z-index: 2;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
 }
 .close{
     position: absolute;;
     cursor: pointer;
     font-size: 20px;
     color: white;
-    width: 225px;
+    width: 200px;
     height: 8px;
     background: #D4CACE;
     border-radius: 15px;
@@ -21,9 +21,157 @@
 .modal_body{
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 20px;
 }
 button{
     display: flex;
     justify-content: center;
 }
+.comments{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.in-comments{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+section{
+    // background: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+h6{
+    color: #8d6373;
+}
+p{
+    color: #948d90;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    background: transparent;
+  }
+  
+  .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    transition: all 0.3s;
+    fill: #666;
+  }
+  
+//   svg:hover {
+//     transform: scale(1.1) rotate(-10deg);
+//   }
+  
+  .container input:checked ~ svg {
+    fill: #2196F3;
+  }
+  
+  .bookmark {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #checkboxInput {
+    display: none;
+  }
+  
+  .svgIcon {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .svgIcon path {
+    fill: rgb(153, 153, 153);
+  }
+  
+  .bookmark::before {
+    content: "\002B";
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    top: 1px;
+  }
+  
+  #checkboxInput:checked + .bookmark::before {
+    content: "\2713";
+    font-size: 0.70em;
+    top: 5px;
+  }
+  
+  #checkboxInput:checked + .bookmark .svgIcon path {
+    fill: yellow;
+  }
+  
+
+  button{
+    background: none;
+  }
+  .sub{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+  .bookmark::after {
+    content: "";
+    background-color: rgba(56, 105, 0, 0.342);
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  #checkboxInput:checked + .bookmark::after {
+    animation: puff-out-center .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+  }
+  
+  @keyframes puff-out-center {
+    0% {
+      transform: scale(1);
+      filter: blur(0px);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(9);
+      filter: blur(1px);
+      opacity: 0;
+    }
+  }
+  .img-sub{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
