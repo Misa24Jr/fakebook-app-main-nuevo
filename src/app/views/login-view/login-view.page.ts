@@ -17,12 +17,10 @@ import { __values } from 'tslib';
 export class LoginPage implements OnInit {
   emailInputValue: String;
   passwordInputValue: String;
-  clearInput: String;
 
   constructor(private router: Router, public alertCtrl: AlertController) {
     this.emailInputValue = '';
     this.passwordInputValue = '';
-    this.clearInput = '';
   }
 
   //aplicar validación de inputs
@@ -31,7 +29,7 @@ export class LoginPage implements OnInit {
   }
 
   handleClearInput() {
-    console.log('click me')
+
   }
 
   handleEmailInputChange(event: any) {

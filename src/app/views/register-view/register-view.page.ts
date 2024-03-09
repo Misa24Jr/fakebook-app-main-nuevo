@@ -27,6 +27,10 @@ export class RegisterViewPage implements OnInit {
 
   }
 
+  handleClearInput() {
+
+  }
+
   handleNameInputChange(event: any) {
     this.nameInputValue = event.target.value;
   }

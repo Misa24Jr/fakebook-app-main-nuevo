@@ -14,7 +14,7 @@
         <h3>Create a new account</h3>
       </div>
     </div>
-    
+
     <div class="contentMin">
       <form action="" class="formularioLogin">
         <div class="email">
@@ -23,6 +23,9 @@
           </article>
           <input type="text" (change)="handleNameInputChange($event)" required>
           <label>Full Name</label>
+          <button class="btn-clear" (click)="handleClearInput()">
+            <img src="../../../assets/close-outline.svg" class="icon">
+          </button>
         </div>
         <div class="email">
           <article>
@@ -30,6 +33,9 @@
           </article>
           <input type="text" (change)="handleEmailInputChange($event)" required>
           <label>Email</label>
+          <button class="btn-clear" (click)="handleClearInput()">
+            <img src="../../../assets/close-outline.svg" class="icon">
+          </button>
         </div>
         <div class="email">
           <article>
@@ -37,6 +43,9 @@
           </article>
           <input type="password" (change)="handlePasswordInputChange($event)" required>
           <label>Password</label>
+          <button class="btn-clear" (click)="handleClearInput()">
+            <img src="../../../assets/close-outline.svg" class="icon">
+          </button>
         </div>
       </form>
       <div class="conetntBtn">

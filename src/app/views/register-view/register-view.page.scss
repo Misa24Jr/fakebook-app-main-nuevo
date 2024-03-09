@@ -154,7 +154,18 @@ img{
   gap: 20px;
   width: 50%;
 }
+
 .icon{
   width: 25px;
   height: 25px;
 }
+
+.btn-clear{
+  border: none;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  color: black;
+  opacity: 0.5;
+}
+

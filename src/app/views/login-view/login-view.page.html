@@ -18,7 +18,7 @@
           <article>
             <img class="icon" src="../../../assets/mail-outline.svg">
           </article>
-          
+
           <input type="text" (change)="handleEmailInputChange($event)" required>
           <label>Email</label>
 
@@ -34,6 +34,9 @@
 
           <input type="password" (change)="handlePasswordInputChange($event)" required>
           <label>Password</label>
+          <button class="btn-clear" (click)="handleClearInput()">
+            <img src="../../../assets/close-outline.svg" class="icon">
+          </button>
         </div>
       </form>
       <div class="conetntBtn">
