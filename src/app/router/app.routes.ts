@@ -71,5 +71,9 @@ export const routes: Routes = [
     path: 'notifications-empty',
     loadComponent: () => import('../views/notifications-empty/notifications-empty.page').then( m => m.NotificationsEmptyPage)
   },
+  {
+    path: 'user-profile-friend',
+    loadComponent: () => import('../views/user-profile-friend/user-profile-friend.page').then( m => m.UserProfileFriendPage)
+  },
 
 ];
