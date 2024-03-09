@@ -31,12 +31,12 @@
         </article>
       </div>
       <div>
-        <app-post [name]="name" [description]="description" [date]="date"></app-post> 
+        <app-post [name]="name" [description]="description" [date]="date"></app-post>
         <!-- Falta la propiedad de la imagen -->
     </div>
     </div>
 
   </div>
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar [params]="'feed'"></app-nav-bar>
 </body>
 </html>

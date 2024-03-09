@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
@@ -11,11 +11,13 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, RouterLink, RouterLink]
 })
 export class NavBarComponent  implements OnInit {
-
-  constructor() { 
-;
+@Input() params: string;
+  constructor() {
+    this.params = '';
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.params)
+  }
 
 }
