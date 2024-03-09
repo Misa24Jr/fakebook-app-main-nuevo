@@ -22,7 +22,7 @@
           <input type="text" (change)="handleEmailInputChange($event)" [(ngModel)]="emailInputValue" required>
           <label>Email</label>
 
-          <button class="btn-clear" (click)="handleClearInput()">
+          <button class="btn-clear" (click)="clearEmailInput()">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
@@ -34,7 +34,7 @@
 
           <input type="password" (change)="handlePasswordInputChange($event)" [(ngModel)]="passwordInputValue" required>
           <label>Password</label>
-          <button class="btn-clear" (click)="handleClearInput()">
+          <button class="btn-clear" (click)="clearPasswordInput()">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>

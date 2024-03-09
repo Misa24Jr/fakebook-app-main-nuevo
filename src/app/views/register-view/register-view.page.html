@@ -21,9 +21,9 @@
           <article>
             <img class="icon" src="../../../assets/person-outline.svg">
           </article>
-          <input type="text" (change)="handleNameInputChange($event)" required>
+          <input type="text" (change)="handleNameInputChange($event)" [(ngModel)]="nameInputValue" required>
           <label>Full Name</label>
-          <button class="btn-clear" (click)="handleClearInput()">
+          <button class="btn-clear" (click)="clearNameInput()">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
@@ -31,9 +31,9 @@
           <article>
             <img class="icon" src="../../../assets/mail-outline.svg">
           </article>
-          <input type="text" (change)="handleEmailInputChange($event)" required>
+          <input type="text" (change)="handleEmailInputChange($event)" [(ngModel)]="emailInputValue" required>
           <label>Email</label>
-          <button class="btn-clear" (click)="handleClearInput()">
+          <button class="btn-clear" (click)="clearEmailInput()">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
@@ -41,9 +41,9 @@
           <article>
             <img class="icon" src="../../../assets/lock-closed-outline.svg">
           </article>
-          <input type="password" (change)="handlePasswordInputChange($event)" required>
+          <input type="password" (change)="handlePasswordInputChange($event)" [(ngModel)]="passwordInputValue" required>
           <label>Password</label>
-          <button class="btn-clear" (click)="handleClearInput()">
+          <button class="btn-clear" (click)="clearPasswordInput()">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>

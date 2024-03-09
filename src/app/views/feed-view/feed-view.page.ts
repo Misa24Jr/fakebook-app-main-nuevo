@@ -19,9 +19,7 @@ import { GetResult, Preferences } from '@capacitor/preferences';
 })
 export class FeedViewPage implements OnInit {
   token: GetResult ;
-  description:string = 'lorem ipsum dolor sit amet, consectetur adipiscing elit.. ';
-  name: string = 'Isabella Fonseca';
-  date: string = '27/08/2024';
+  posts: any[] = [];
 
   constructor() {
     this.token = { value: '' };
@@ -47,7 +45,8 @@ export class FeedViewPage implements OnInit {
         console.log('No posts');
       }
 
-      return console.log(data.posts);
+      this.posts = data.posts;
+      console.log(this.posts);
     } catch (error) {
       return alert('Error!', 'Unable to get your friend posts', ['OK']);
     }

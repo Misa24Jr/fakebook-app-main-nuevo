@@ -25,17 +25,22 @@
 
     <div class="MaxB">
       <div class="content">
-
         <article class="title-content">
           <h3>what your friends are doing...</h3>
         </article>
       </div>
-      <div>
-        <app-post [name]="name" [description]="description" [date]="date"></app-post>
-        <!-- Falta la propiedad de la imagen -->
+      <div *ngFor="let post of posts">
+        <app-post
+          [_id]="post._id"
+          [name]="post.user.name"
+          [description]="post.body"
+          [date]="post.createdAt"
+          [images]="post.images"
+          [liked]= "post.liked"
+          [favorited]= "post.favorited">
+        </app-post>
+      </div>
     </div>
-    </div>
-
   </div>
   <app-nav-bar [params]="'feed'"></app-nav-bar>
 </body>

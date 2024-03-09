@@ -27,8 +27,26 @@ export class RegisterViewPage implements OnInit {
 
   }
 
-  handleClearInput() {
+  ionViewWillEnter() {
+    this.clearInputs();
+  }
 
+  clearInputs() {
+    this.nameInputValue = '';
+    this.emailInputValue = '';
+    this.passwordInputValue = '';
+  }
+
+  clearEmailInput() {
+    this.emailInputValue = '';
+  }
+
+  clearPasswordInput() {
+    this.passwordInputValue = '';
+  }
+
+  clearNameInput() {
+    this.nameInputValue = '';
   }
 
   handleNameInputChange(event: any) {

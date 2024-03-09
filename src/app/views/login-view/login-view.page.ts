@@ -25,20 +25,24 @@ export class LoginPage implements OnInit {
 
   //aplicar validación de inputs
   ngOnInit() {
-    this.emailInputValue = '';
-    this.passwordInputValue = '';
+
   }
 
   ionViewWillEnter() {
-    console.log('test')
-    this.handleClearInput()
+    this.clearInputs();
   }
 
-  handleClearInput() {
-    console.log('test1')
+  clearInputs() {
     this.emailInputValue = '';
     this.passwordInputValue = '';
-    console.log(this.emailInputValue)
+  }
+
+  clearEmailInput() {
+    this.emailInputValue = '';
+  }
+
+  clearPasswordInput() {
+    this.passwordInputValue = '';
   }
 
   handleEmailInputChange(event: any) {
