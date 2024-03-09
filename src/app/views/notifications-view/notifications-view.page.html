@@ -9,11 +9,14 @@
       <h3 class="title">Fakebook</h3>
     </div>
 
-    <div class="MaxB">
-      <div class="cont-noti">
-        <app-friends [name]="name"></app-friends>
-      </div>
-      
+      <div class="MaxB">
+        <div class="content" *ngIf="!notificationData.length">
+          <p>It seems like you don't have any notifications...
+          </p>
+        </div>
+        <div class="cont-noti" *ngIf="notificationData.length">
+          <app-friends [name]="name"></app-friends>
+        </div>
     </div>
 
 <app-nav-bar></app-nav-bar>

@@ -29,7 +29,10 @@ export class LoginPage implements OnInit {
   }
 
   handleClearInput() {
-
+    console.log('test1')
+    this.emailInputValue = '';
+    this.passwordInputValue = '';
+    console.log(this.emailInputValue)
   }
 
   handleEmailInputChange(event: any) {

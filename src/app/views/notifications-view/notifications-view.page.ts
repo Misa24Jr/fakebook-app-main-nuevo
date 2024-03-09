@@ -20,6 +20,7 @@ export class NotificationsViewPage implements OnInit {
   token: GetResult ;
   photos: string[] = [];
   name: string = 'Rodolfo'
+  notificationData: Array<Object> = [];
 
   constructor(private router: Router) {
     this.token = { value: ''};
@@ -37,17 +38,13 @@ export class NotificationsViewPage implements OnInit {
         headers: { 'Authorization': `Bearer ${this.token.value}` }
       });
 
-      if(response.status !== 200) {
-        //render the page with no notifications
-        return alert('Error!', 'Server error getting your friend requests', ['OK']);
-      }
+      if(response.status !== 200) return alert('Error!', 'Server error getting your friend requests', ['OK']);
 
       const data = await response.json();
 
-      if(data.length === 0){
-        //render the page with no notifications
-        console.log('No friend requests');
-      }
+      this.notificationData = data;
+
+      // if(data.length === 0) return this.router.navigate(['/notifications-empty']);
 
       return console.log(data);
     } catch (error) {

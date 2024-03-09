@@ -19,7 +19,7 @@
             <img class="icon" src="../../../assets/mail-outline.svg">
           </article>
 
-          <input type="text" (change)="handleEmailInputChange($event)" required>
+          <input type="text" (change)="handleEmailInputChange($event)" [(ngModel)]="emailInputValue" required>
           <label>Email</label>
 
           <button class="btn-clear" (click)="handleClearInput()">
@@ -32,7 +32,7 @@
             <img class="icon" src="../../../assets/lock-closed-outline.svg">
           </article>
 
-          <input type="password" (change)="handlePasswordInputChange($event)" required>
+          <input type="password" (change)="handlePasswordInputChange($event)" [(ngModel)]="passwordInputValue" required>
           <label>Password</label>
           <button class="btn-clear" (click)="handleClearInput()">
             <img src="../../../assets/close-outline.svg" class="icon">
