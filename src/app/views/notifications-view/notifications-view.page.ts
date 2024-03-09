@@ -6,18 +6,20 @@ import { NavBarComponent } from 'src/app/components/others/nav-bar/nav-bar.compo
 import { Router } from '@angular/router';
 import { alert } from 'src/app/utils/alert';
 import { GetResult, Preferences } from '@capacitor/preferences';
+import { FriendsComponent } from 'src/app/components/containers/friends/friends.component';
 
 @Component({
   selector: 'app-notifications-view',
   templateUrl: './notifications-view.page.html',
   styleUrls: ['./notifications-view.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, NavBarComponent]
+  imports: [IonicModule, CommonModule, FormsModule, NavBarComponent, FriendsComponent]
 })
 export class NotificationsViewPage implements OnInit {
 
   token: GetResult ;
   photos: string[] = [];
+  name: string = 'Rodolfo'
 
   constructor(private router: Router) {
     this.token = { value: ''};
