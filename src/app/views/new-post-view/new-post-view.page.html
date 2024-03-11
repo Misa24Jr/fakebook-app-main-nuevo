@@ -23,21 +23,19 @@
     </div>
 
     <div class="MaxC">
-
-      <div class="tack">
+      <div class="tack" (click)="toggleAccordion()">
         <p class="select">Select images from your gallery</p>
         <div>
           <p>{{countImg}}/8</p>
         </div>
-        <img src="../../../assets/chevron-down-outline.svg">
+        <img [src]="accordionOpen ? '../../../assets/chevron-down-outline.svg' : '../../../assets/chevron-up-outline.svg'">
       </div>
 
-      <div class="img">
+      <div class="img" *ngIf="accordionOpen">
         <img [src]="image" *ngFor="let image of images" class="image">
         <div class="file-select" id="src-fiel">
           <input type="file" (change)="uploadImage($event)" aria-label="Image" name="src-file2">
         </div>
-
       </div>
     </div>
     <div class="post">

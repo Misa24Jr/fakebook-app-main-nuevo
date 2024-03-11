@@ -18,28 +18,26 @@ export class NewPostViewPage implements OnInit {
   textInput: string;
   characters: any;
   countImg: number;
-
+  accordionOpen: boolean;
 
   uploadImage(event: any){
     const file = event.target.files[0];
     console.log(file);
-
 
     const imgRef = ref(this.storage, `images/${file.name}`);
 
     uploadBytes(imgRef, file)
     .then(response => console.log(response))
     .catch(error => console.log(error));
-
-
   }
+
   constructor(private storage: Storage) { 
     this.textInput = '';
     this.characters = '';
     this.images = [];
     this.countImg = 0;
-
-   }
+    this.accordionOpen = false;
+  }
 
   ngOnInit() {
     this.getImages();
@@ -54,16 +52,18 @@ export class NewPostViewPage implements OnInit {
 
     listAll(imgRef)
     .then(async response => {
-        //console.log(response);
         this.images = [];
         for(let item of response.items){
           const url = await getDownloadURL(item)
           this.images.push(url);
-          // console.log(url);
         }
-        this.countImg = this.images.length; // Asignar el número de imágenes a la variable countImg
+        this.countImg = this.images.length;
         console.log(this.countImg);
     })
     .catch(error => console.log(error));
+  }
+
+  toggleAccordion() {
+    this.accordionOpen = !this.accordionOpen;
   }
 }
