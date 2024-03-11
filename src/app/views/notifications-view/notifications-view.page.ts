@@ -18,9 +18,7 @@ import { FriendsComponent } from 'src/app/components/containers/friends/friends.
 export class NotificationsViewPage implements OnInit {
 
   token: GetResult ;
-  photos: string[] = [];
-  name: string = 'Rodolfo'
-  notificationData: Array<Object> = [];
+  notifications: any[] = [];
 
   constructor(private router: Router) {
     this.token = { value: ''};
@@ -42,37 +40,10 @@ export class NotificationsViewPage implements OnInit {
 
       const data = await response.json();
 
-      this.notificationData = data;
-
-      // if(data.length === 0) return this.router.navigate(['/notifications-empty']);
-
-      return console.log(data);
+      return this.notifications = data;;
     } catch (error) {
       alert('Error!', 'Unable to get your friend requests', ['OK']);
       return this.router.navigate(['/feed']);
-    }
-  }
-
-  async handleAcceptDeclineClick(answer: boolean) {
-    try {
-      const applicantId = ''; // get the applicant id from the notification
-      const response = await fetch('https://fakebook-api-dev-qamc.3.us-1.fl0.io/api/friends/answerRequest', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${this.token.value}`,
-        },
-        body: JSON.stringify({
-          applicant: applicantId,
-          answer: answer
-        })
-      });
-
-      if(response.status !== 200) return alert('Error!', 'Server error trying to accept/decline the friend request', ['OK']);
-
-      return; //refresh the notifications deleting the accepted/declined request
-    } catch (error) {
-      return alert('Error!', 'Unknown trying to accept/decline the friend request', ['OK']);
     }
   }
 }

@@ -7,7 +7,6 @@
 </head>
 <body>
   <div>
-
     <div class="MaxA">
       <div class="icono-content">
         <button [routerLink]="['/user-settings']" class="btn-icono">
@@ -17,37 +16,16 @@
       <img class="icono" src="../../../assets/person-outline.svg">
       <h3 class="title">{{ userName }}</h3>
     </div>
-
     <div class="MaxB">
-      <div class="content">
-
+      <div class="content" >
         <article class="title-content">
           <h3>All my posts</h3>
-          <img src="../../../assets/bookmark-outline.svg">
+          <img (click)="handleFavoriteClick()" src="../../../assets/bookmark-outline.svg">
         </article>
-
-          <div class="btn-content">
-            <button (click)="handlePencilClick()"><img src="../../../assets/pencil-outline.svg"></button>
-            <button (click)="handleTrashClick()"><img src="../../../assets/trash-outline.svg"></button>
-          </div>
-          <div class="descrip-content">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio dologggggribus ut ab iure magni corporis facere amet ipsam, adipisci esse, maxime modi laborum animi? Quas alias corrupti eius aut voluptatum!</p>
-          </div>
-          <div class="img-content">
-            <img [src]="image" *ngFor="let image of images" class="img">
-          </div>
-
-          <div class="like-content">
-            <div class="comments">
-              <button>
-                <p (click)="handleExploreCommentsClick()" class="text-comments">explore comments</p>
-              </button>
-            </div>
-              <p class="day">last edited 12/12/23 15:30</p>
-          </div>
+        <p class="empty-msg" *ngIf="myPosts.length===0">You haven't posted anything yet</p>
+        <!-- usar verificar con ngif si myPosts.length es diferente de 0 y renderizar el componente myPost con un ngFor que recorra myPosts  -->
       </div>
     </div>
-
   </div>
 </body>
 </html>

@@ -4,22 +4,22 @@
 </head>
 <body>
   <div>
-
     <div class="MaxA">
       <h3 class="title">Fakebook</h3>
     </div>
 
-      <div class="MaxB">
-        <div class="content" *ngIf="!notificationData.length">
-          <p>It seems like you don't have any notifications...
-          </p>
-        </div>
-        <div class="cont-noti" *ngIf="notificationData.length">
-          <app-friends [name]="name"></app-friends>
-        </div>
-    </div>
+    <div class="MaxB">
+      <div class="content" *ngIf="notifications.length === 0">
+        <p>It seems like you don't have any notifications...</p>
+      </div>
 
-<app-nav-bar></app-nav-bar>
+      <ng-container *ngIf="notifications.length !== 0">
+        <div class="content" *ngFor="let not of notifications">
+            <app-friends [name]="not.applicant.name" [applicantId]="not.applicant._id"></app-friends>
+        </div>
+      </ng-container>
+    </div>
   </div>
+  <app-nav-bar></app-nav-bar>
 </body>
 </html>

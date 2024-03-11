@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink, Router } from '@angular/router';
-import { Storage, ref } from '@angular/fire/storage';
-import { listAll, getDownloadURL } from '@firebase/storage';
+import { Storage } from '@angular/fire/storage';
+//import { listAll, getDownloadURL } from '@firebase/storage';
 import { alert } from 'src/app/utils/alert';
 import { GetResult, Preferences } from '@capacitor/preferences';
 
@@ -19,6 +19,7 @@ export class UserProfileViewPage implements OnInit {
   images: string[];
   token: GetResult;
   userName: string;
+  myPosts: any[] = [];
 
   constructor(private storage: Storage) {
     this.images = [];
@@ -29,7 +30,6 @@ export class UserProfileViewPage implements OnInit {
   async ngOnInit() {
     this.token = await Preferences.get({ key : 'token' });
     this.getNameAndEmail();
-    this.getImages();
     this.getAllPosts();
   }
 
@@ -44,31 +44,10 @@ export class UserProfileViewPage implements OnInit {
 
       const data = await response.json();
 
-      if(data.length === 0){
-        //render a message like "It seems like you haven't posted anything yet."
-        console.log('No posts');
-      }
-
-      return console.log("user posts: ", data.posts);
+      return this.myPosts = data.posts;
     } catch (error) {
       return alert('Error!', 'Unable to get your posts', ['OK']);
     }
-  }
-
-  getImages(){
-    const imgRef = ref(this.storage, 'images');
-
-    listAll(imgRef)
-    .then(async response => {
-        console.log(response);
-        this.images = [];
-        for(let item of response.items){
-          const url = await getDownloadURL(item)
-          this.images.push(url);
-          console.log(url);
-        }
-    })
-    .catch(error => console.log(error));
   }
 
   async getNameAndEmail() {
@@ -87,16 +66,8 @@ export class UserProfileViewPage implements OnInit {
     }
   }
 
-  handlePencilClick() {
-    alert("Edit Post", "This feature is not available yet", ["OK"]);
+  handleFavoriteClick() {
+    console.log('Favorite clicked');
+    //enviar al usuario a la vista favorite-posts view
   }
-
-  handleTrashClick() {
-    alert("Delete Post", "This feature is not available yet", ["OK"]);
-  }
-
-  handleExploreCommentsClick() {
-    alert("Explore Comments", "This feature is not available yet", ["OK"]);
-  }
-
 }
