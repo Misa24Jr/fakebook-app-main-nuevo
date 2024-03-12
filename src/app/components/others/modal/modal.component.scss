@@ -24,11 +24,11 @@
     align-items: center;
     flex-direction: column;
     margin-top: 25px;
-    gap: 20px;
 }
 button{
     display: flex;
     justify-content: center;
+    background: transparent;
 }
 .comments{
     width: 80%;
@@ -36,27 +36,30 @@ button{
     justify-content: center;
     flex-direction: column;
     border-bottom: 0.5px solid #a592ab;
+    margin-top: 3%;
+
 }
 .in-comments{
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    // gap: 20px;
     // background: blue;
 }
 section{
-    // background: red;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    // height: 165px;
 }
 h6{
     color: #8d6373;
 }
 p{
+    height: 5%;
     color: #948d90;
+    // background: wheat;
 }
 
 .container input {
@@ -132,14 +135,19 @@ p{
     fill: yellow;
   }
   
-
-  button{
-    background: none;
-  }
   .sub{
+    display: flex;
+    justify-content: center;
+    // height: 100px;
+    flex-direction: column;
+    // background: yellow;
+  }
+  .atc{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     // background: red;
   }
 
