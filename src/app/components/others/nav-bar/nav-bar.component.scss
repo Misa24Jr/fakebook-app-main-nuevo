@@ -24,8 +24,11 @@
     cursor: pointer;
     text-decoration: none;
   }
-  .tab:hover{
-    border-bottom: 3px solid #80616D;
+  // .tab:hover{
+  //   border-bottom: 3px solid #80616D;
+  // }
+  .tab.active {
+    border-bottom: 2px solid #80616D; /* Replace 'blue' with your desired color */
   }
 
   
