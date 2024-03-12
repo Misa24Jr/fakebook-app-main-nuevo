@@ -1,21 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { RouterLinkActive } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterLinkActive, RouterLink } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLink, RouterLink, RouterLinkActive]
+  imports: [IonicModule, RouterLinkActive, RouterLink]
 })
-export class NavBarComponent  implements OnInit {
-  constructor() {
-  }
+export class NavBarComponent implements OnInit {
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
