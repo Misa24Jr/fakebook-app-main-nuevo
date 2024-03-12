@@ -20,14 +20,16 @@
       >
     </div>
     <div class="MaxB">
-      <section *ngFor="let user of usersFound">
-        <article>
-          <div>
-            <img src="../../../assets/person-outline.svg">
-          </div>
-          <p>{{ user.name }}</p>
-        </article>
-      </section>
+        <section *ngFor="let user of usersFound">
+            <button [routerLink]="['user-profile-friend']">
+            <article>
+              <div>
+                <img src="../../../assets/person-outline.svg">
+              </div>
+              <p>{{ user.name }}</p>
+            </article>
+          </button>
+        </section>
     </div>
   </div>
 </body>

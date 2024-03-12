@@ -17,7 +17,8 @@
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 10%;
+    // margin-bottom: 10%;
+    // background: red;
   }
   .ask{
     display: flex;
@@ -25,6 +26,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    // background: green;
   }
   
   .MaxB{
@@ -151,9 +153,11 @@
   .icono-content{
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    // align-items: center;
     width: 90%;
+    top: 1;
+    // background: yellow;
   }
   
   .btn-icono{
