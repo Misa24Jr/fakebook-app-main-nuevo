@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('../views/login-view/login-view.page').then((m) => m.LoginPage),
-    
+
   },
   {
     path: 'feed',
@@ -62,14 +62,6 @@ export const routes: Routes = [
   {
     path: 'log-out',
     loadComponent: () => import('../views/log-out/log-out.page').then( m => m.LogOutPage)
-  },
-  {
-    path: 'feed-empty',
-    loadComponent: () => import('../views/feed-empty/feed-empty.page').then( m => m.FeedEmptyPage)
-  },
-  {
-    path: 'notifications-empty',
-    loadComponent: () => import('../views/notifications-empty/notifications-empty.page').then( m => m.NotificationsEmptyPage)
   },
   {
     path: 'user-profile-friend',
