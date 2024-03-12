@@ -117,7 +117,7 @@ img{
     width: 25px;
     height: 25px;
     transition: all 0.3s;
-    fill: #666;
+    fill: #959595;
   }
 
 //   svg:hover {
@@ -125,7 +125,7 @@ img{
 //   }
 
   .container input:checked ~ svg {
-    fill: #2196F3;
+    fill: #000000;
   }
 
   .bookmark {
@@ -146,7 +146,7 @@ img{
   }
 
   .svgIcon path {
-    fill: rgb(153, 153, 153);
+    fill: #959595;
   }
 
   .bookmark::before {
@@ -164,7 +164,7 @@ img{
   }
 
   #checkboxInput:checked + .bookmark .svgIcon path {
-    fill: yellow;
+    fill: black;
   }
 
 
