@@ -57,8 +57,9 @@ h6{
     color: #8d6373;
 }
 p{
-    height: 5%;
+    // height: 5%;
     color: #948d90;
+    font-size: 14px;
     // background: wheat;
 }
 
@@ -144,4 +145,10 @@ p{
     gap: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
+  }
+  .input{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
   }
