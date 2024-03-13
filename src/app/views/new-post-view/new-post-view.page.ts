@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { alert } from 'src/app/utils/alert';
+import { GetResult, Preferences } from '@capacitor/preferences';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage'
 
 @Component({
@@ -14,24 +16,15 @@ import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fir
 })
 
 export class NewPostViewPage implements OnInit {
+  token: GetResult ;
   images: string[];
   textInput: string;
   characters: any;
   countImg: number;
   accordionOpen: boolean;
 
-  uploadImage(event: any){
-    const file = event.target.files[0];
-    console.log(file);
-
-    const imgRef = ref(this.storage, `images/${file.name}`);
-
-    uploadBytes(imgRef, file)
-    .then(response => console.log(response))
-    .catch(error => console.log(error));
-  }
-
-  constructor(private storage: Storage) { 
+  constructor(private storage: Storage, private router: Router) {
+    this.token = { value: '' };
     this.textInput = '';
     this.characters = '';
     this.images = [];
@@ -39,31 +32,53 @@ export class NewPostViewPage implements OnInit {
     this.accordionOpen = false;
   }
 
-  ngOnInit() {
-    this.getImages();
+  async ngOnInit() {
+    this.token = await Preferences.get({ key: 'token' });
+  }
+
+  async uploadImage(event: any){
+    const file = event.target.files[0];
+    const imgRef = ref(this.storage, `images/${file.name}`);
+
+    try {
+      await uploadBytes(imgRef, file);
+    } catch (error) {
+      return alert('Error', 'Something went wrong uploading your image', ['Try Again']);
+    }
+
+    this.images.push(await getDownloadURL(imgRef));
+    return this.countImg = this.images.length;
   }
 
   countCharacters(){
     this.characters = this.textInput.length;
   }
 
-  getImages(){
-    const imgRef = ref(this.storage, 'images');
-
-    listAll(imgRef)
-    .then(async response => {
-        this.images = [];
-        for(let item of response.items){
-          const url = await getDownloadURL(item)
-          this.images.push(url);
-        }
-        this.countImg = this.images.length;
-        console.log(this.countImg);
-    })
-    .catch(error => console.log(error));
-  }
-
   toggleAccordion() {
     this.accordionOpen = !this.accordionOpen;
+  }
+
+  async createPost() {
+
+    if(this.textInput.length === 0 || this.images.length === 0) {
+      return alert('Oops!', 'Please write something or upload an image to create a post', ['OK']);
+    }
+
+    try {
+      const response = await fetch('https://fakebook-api-dev-qamc.3.us-1.fl0.io/api/posts/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.token.value}`
+        },
+        body: JSON.stringify({body: this.textInput, images: this.images})
+      });
+
+      if(response.status !== 201) return alert('Oops!', 'Server error creating your post', ['OK']);
+
+      return this.router.navigate(['/feed']);
+    } catch (error) {
+      return alert('Error!', 'Unable to create your post', ['OK']);
+    }
   }
 }

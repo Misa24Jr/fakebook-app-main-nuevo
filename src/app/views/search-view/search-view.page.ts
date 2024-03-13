@@ -52,5 +52,9 @@ export class SearchViewPage implements OnInit {
     }
   }
 
+  handleUserClick() {
+    console.log('User clicked');
+  }
+
 }
 

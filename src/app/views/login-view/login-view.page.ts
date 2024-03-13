@@ -68,9 +68,15 @@ export class LoginPage implements OnInit {
         })
       });
 
+      if(response.status === 404) return alert('Oops!', 'User not found', ['Try Again']);
+
       if(response.status === 401) return alert('Oops!', 'Email or password is incorrect', ['Try Again']);
 
-      if(response.status !== 401 && response.status !== 200) return alert('Error!', 'Unknown error in server', ['OK']);
+      if(
+        response.status !== 401 &&
+        response.status !== 404 &&
+        response.status !== 200
+      ) return alert('Error!', 'Unknown error in server', ['OK']);
 
       const data = await response.json();
       await Preferences.set({ key: 'token', value: data.token });

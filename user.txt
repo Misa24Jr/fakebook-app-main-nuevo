@@ -5,7 +5,7 @@
 }
 {
     "name": "Jose Mavarez",
-    "email": "josemmr11@hotmail.com",
+    "email": "josemmr311@gmail.com",
     "password": "jose.3011"
 }
 {

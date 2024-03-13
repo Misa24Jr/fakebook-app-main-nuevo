@@ -41,12 +41,7 @@ export class FeedViewPage implements OnInit {
 
       const data = await response.json();
 
-      if(data.length === 0){
-        console.log('No posts');
-      }
-
-      this.posts = data.posts;
-      console.log(this.posts);
+      return this.posts = data.posts;
     } catch (error) {
       return alert('Error!', 'Unable to get your friend posts', ['OK']);
     }

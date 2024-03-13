@@ -21,7 +21,7 @@
     </div>
     <div class="MaxB">
         <section *ngFor="let user of usersFound">
-            <button [routerLink]="['/user-profile-friend']">
+          <button (click)="handleUserClick()">
             <article>
               <div>
                 <img src="../../../assets/person-outline.svg">
