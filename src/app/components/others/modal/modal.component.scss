@@ -93,46 +93,7 @@ p{
 //   }
   
   .container input:checked ~ svg {
-    fill: black;
-  }
-  
-  .bookmark {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #checkboxInput {
-    display: none;
-  }
-  
-  .svgIcon {
-    height: 20px;
-    width: 20px;
-  }
-  
-  .svgIcon path {
-    fill: rgb(153, 153, 153);
-  }
-  
-  .bookmark::before {
-    content: "\002B";
-    position: absolute;
-    color: rgb(255, 255, 255);
-    font-size: 1.2em;
-    top: 1px;
-  }
-  
-  #checkboxInput:checked + .bookmark::before {
-    content: "\2713";
-    font-size: 0.70em;
-    top: 5px;
-  }
-  
-  #checkboxInput:checked + .bookmark .svgIcon path {
-    fill: yellow;
+    fill: #4D2959;
   }
   
   .sub{
@@ -161,25 +122,6 @@ p{
     border-radius: 50%;
     z-index: -1;
   }
-  
-  #checkboxInput:checked + .bookmark::after {
-    animation: puff-out-center .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
-  }
-  
-  @keyframes puff-out-center {
-    0% {
-      transform: scale(1);
-      filter: blur(0px);
-      opacity: 1;
-    }
-  
-    100% {
-      transform: scale(9);
-      filter: blur(1px);
-      opacity: 0;
-    }
-  }
-
   @keyframes fadeIn {
     from {
       opacity: 0;

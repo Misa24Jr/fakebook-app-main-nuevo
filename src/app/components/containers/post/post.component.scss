@@ -125,7 +125,7 @@ img{
 //   }
 
   .container input:checked ~ svg {
-    fill: #000000;
+    fill: #4D2959;
   }
 
   .bookmark {
@@ -164,7 +164,7 @@ img{
   }
 
   #checkboxInput:checked + .bookmark .svgIcon path {
-    fill: black;
+    fill: #4D2959;
   }
 
 
