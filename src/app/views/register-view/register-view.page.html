@@ -23,7 +23,7 @@
           </article>
           <input type="text" (change)="handleNameInputChange($event)" [(ngModel)]="nameInputValue" name="FullName" required>
           <label>Full Name</label>
-          <button class="btn-clear" (click)="clearNameInput()">
+          <button class="btn-clear" (click)="clearNameInput()" *ngIf="nameInputValue">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
@@ -33,7 +33,7 @@
           </article>
           <input type="text" (change)="handleEmailInputChange($event)" [(ngModel)]="emailInputValue" name="email" required>
           <label>Email</label>
-          <button class="btn-clear" (click)="clearEmailInput()">
+          <button class="btn-clear" (click)="clearEmailInput()" *ngIf="emailInputValue">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
@@ -43,7 +43,7 @@
           </article>
           <input type="password" (change)="handlePasswordInputChange($event)" [(ngModel)]="passwordInputValue" name="password" required>
           <label>Password</label>
-          <button class="btn-clear" (click)="clearPasswordInput()">
+          <button class="btn-clear" (click)="clearPasswordInput()" *ngIf="passwordInputValue">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>

@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +21,7 @@
           <input type="text" (change)="handleEmailInputChange($event)" [(ngModel)]="emailInputValue" name="emal" required>
           <label>Email</label>
 
-          <button class="btn-clear" (click)="clearEmailInput()">
+          <button class="btn-clear" (click)="clearEmailInput()" *ngIf="emailInputValue">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
@@ -34,7 +33,7 @@
 
           <input type="password" (change)="handlePasswordInputChange($event)" [(ngModel)]="passwordInputValue" name="password" required>
           <label>Password</label>
-          <button class="btn-clear" (click)="clearPasswordInput()">
+          <button class="btn-clear" (click)="clearPasswordInput()" *ngIf="passwordInputValue">
             <img src="../../../assets/close-outline.svg" class="icon">
           </button>
         </div>
