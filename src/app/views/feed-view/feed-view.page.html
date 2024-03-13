@@ -29,7 +29,7 @@
           <h3>what your friends are doing...</h3>
         </article>
       </div>
-      <div *ngIf="posts.length === 0">
+      <div *ngIf="posts.length === 0" class="msg">
         <p>It seems like your friends haven't posted anything yet!</p>
       </div>
       <ng-container *ngIf="posts.length !== 0">

@@ -22,7 +22,9 @@
           <h3>All my posts</h3>
           <img (click)="handleFavoriteClick()" src="../../../assets/bookmark-outline.svg">
         </article>
-        <p class="empty-msg" *ngIf="myPosts.length===0">You haven't posted anything yet</p>
+        <div class="msg">
+          <p class="empty-msg" *ngIf="myPosts.length===0">You haven't posted anything yet</p>
+        </div>
         <!-- usar verificar con ngif si myPosts.length es diferente de 0 y renderizar el componente myPost con un ngFor que recorra myPosts  -->
       </div>
     </div>

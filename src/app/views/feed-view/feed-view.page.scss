@@ -52,7 +52,6 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 10%;
-    margin-bottom: 8%;
 }
 .descrip-content{
     width: 90%;
@@ -137,4 +136,13 @@ img{
     color: black;
     font-size: small;
     margin-bottom: 3%;
+}
+p{
+    color: #AA959D;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.msg{
+    width: 80%;
 }
