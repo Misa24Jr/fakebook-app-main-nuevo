@@ -21,10 +21,8 @@
     </div>
     <div class="MaxB">
         <section *ngFor="let user of usersFound">
-          
+          <app-btn-search [user]="user" ></app-btn-search>
         </section>
-        <app-btn-search></app-btn-search>
-        
     </div>
   </div>
 </body>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-btn-search',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   standalone: true
 })
 export class BtnSearchComponent  implements OnInit {
+  @Input() user: any = {};
 
   constructor() { }
 
