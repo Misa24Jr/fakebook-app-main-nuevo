@@ -1,11 +1,18 @@
-.modal{
-    width: 100%;
-    background: #E5E5E5;
-    height: 90%;
-    position: absolute;
-    z-index: 2;
-    border-top-right-radius: 35px;
-    border-top-left-radius: 35px;
+// .modal{
+//     width: 100%;
+//     background: #E5E5E5;
+//     height: 90%;
+//     position: absolute;
+//     z-index: 2;
+//     border-top-right-radius: 35px;
+//     border-top-left-radius: 35px;
+// }
+
+ion-content{
+  width: 100%;
+  --background: #E5E5E5;
+  position: absolute;
+  z-index: 2;
 }
 .close{
     position: absolute;;
@@ -24,6 +31,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 25px;
+    margin-bottom: 60%;
 }
 button{
     display: flex;
