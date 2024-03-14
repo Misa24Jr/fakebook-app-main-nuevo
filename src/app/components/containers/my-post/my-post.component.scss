@@ -10,8 +10,14 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     font-size: 16px;
+    // background: green;
+}
+.day{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 .img-content{
   width: 90%;
@@ -79,20 +85,24 @@ img{
     border-radius: 25%;
     padding: 5px 8px;
 }
-
+.name{
+  font-size: 15px;
+}
+img{
+  width: 25px;
+  height: 25px;
+}
 .day-name{
     display: flex;
     justify-content: space-between;
-    opacity: 0.4;
     color: black;
     font-size: small;
     margin-bottom: 1%;
-    .name{
-        opacity: 1;
-        font-size: medium;
-        color: #4D2959;
-        font-weight: bold;
-    }
+    // background: green;
+}
+.trash{
+  display: flex;
+  gap: 15px;
 }
 
 .container input {
@@ -196,13 +206,12 @@ img{
       opacity: 0;
     }
   }
-  .modal{
-    // width: 80%;
-    display: flex;
-    justify-content: flex-start;
-    background: red;
-  }
   .general{
     // background: red;
     width: 100%;
+  }
+  span{
+    color: #4D2959;
+    opacity: 0.4;
+    font-weight: bold;
   }
