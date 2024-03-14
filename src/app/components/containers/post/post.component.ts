@@ -4,6 +4,7 @@ import { Storage} from '@angular/fire/storage';
 import { ModalComponent } from '../../others/modal/modal.component';
 import { SwitchService } from 'src/services/switch.service';
 import { GetResult, Preferences } from '@capacitor/preferences';
+import { alert } from 'src/app/utils/alert';
 
 @Component({
   selector: 'app-post',
@@ -43,6 +44,69 @@ export class PostComponent  implements OnInit {
   modalOpenHandler() {
     this.modalOpen = true;
   }
+
+  async handleFavoriteClick() {
+    if(this.favorited) {
+      console.log('el post es favorito, hay que quitarle el favorito')
+      try {
+        const response = await fetch('https://fakebook-api-dev-qamc.3.us-1.fl0.io/api/favorites/remove', {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.token.value}`
+          },
+          body: JSON.stringify({ postId: this._id })
+        });
+        if(response.status !== 200) return alert('Error!', 'Server error removing favorite', ['OK']);
+        return this.favorited = !this.favorited;
+      } catch (error) {
+        return alert('Error!', 'Unable to remove favorite', ['OK']);
+      }
+    } else {
+      console.log('el post no es favorito, hay que ponerle el favorito');
+      try {
+        const response = await fetch('https://fakebook-api-dev-qamc.3.us-1.fl0.io/api/favorites/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${this.token.value}`
+          },
+          body: JSON.stringify({ postId: this._id })
+        });
+        if(response.status !== 201) return alert('Error!', 'Server error adding favorite', ['OK']);
+        return this.favorited = !this.favorited;
+      } catch (error) {
+        return alert('Error!', 'Unable to add favorite', ['OK']);
+      }
+    }
+  }
+
+  async handleLikeClick() {
+    if(this.liked) {
+      console.log('el post esta likeado, hay que quitarle el like')
+      try {
+        const response = await fetch('https://fakebook-api-dev-qamc.3.us-1.fl0.io/api/likes/dislike', {
+
+        });
+        if(response.status !== 200) return alert('Error!', 'Server error removing like', ['OK']);
+        return this.liked = !this.liked;
+      } catch (error) {
+        return alert('Error!', 'Unable to remove like', ['OK']);
+      }
+    } else {
+      console.log('el post no esta likeado, hay que ponerle el like')
+      try {
+        const response = await fetch('https://fakebook-api-dev-qamc.3.us-1.fl0.io/api/likes/like', {
+
+        });
+        if(response.status !== 201) return alert('Error!', 'Server error adding like', ['OK']);
+        return this.liked = !this.liked;
+      } catch (error) {
+        return alert('Error!', 'Unable to add like', ['OK']);
+      }
+    }
+  }
+
   onFavoriteClick() {
     this.favoriteClicked = !this.favoriteClicked;
   }

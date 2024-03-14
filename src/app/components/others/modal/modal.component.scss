@@ -1,12 +1,12 @@
-// .modal{
-//     width: 100%;
-//     background: #E5E5E5;
-//     height: 90%;
-//     position: absolute;
-//     z-index: 2;
-//     border-top-right-radius: 35px;
-//     border-top-left-radius: 35px;
-// }
+.modal{
+    width: 100%;
+    background: #E5E5E5;
+    height: 90%;
+    position: absolute;
+    z-index: 2;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+}
 
 ion-content{
   width: 100%;
@@ -77,14 +77,14 @@ p{
     width: 0;
     background: transparent;
   }
-  
+
   .container {
     display: block;
     position: relative;
     cursor: pointer;
     user-select: none;
   }
-  
+
   svg {
     position: relative;
     top: 0;
@@ -94,15 +94,15 @@ p{
     transition: all 0.3s;
     fill: #959595;
   }
-  
+
 //   svg:hover {
 //     transform: scale(1.1) rotate(-10deg);
 //   }
-  
+
   .container input:checked ~ svg {
     fill: #4D2959;
   }
-  
+
 
   .atc{
     width: 100%;
@@ -120,7 +120,7 @@ p{
     align-items: center;
   }
 
-  
+
   .bookmark::after {
     content: "";
     background-color: rgba(56, 105, 0, 0.342);
@@ -140,11 +140,11 @@ p{
       transform: translateY(0);
     }
   }
-  
+
   .modal {
     animation: fadeIn 0.5s ease-in-out;
   }
-  
+
   .img-sub{
     width: 90%;
     display: grid;
