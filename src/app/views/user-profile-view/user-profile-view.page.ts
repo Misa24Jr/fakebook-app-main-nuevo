@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterLink, Router } from '@angular/router';
 import { Storage } from '@angular/fire/storage';
-//import { listAll, getDownloadURL } from '@firebase/storage';
 import { alert } from 'src/app/utils/alert';
 import { GetResult, Preferences } from '@capacitor/preferences';
+import { MyPostComponent } from 'src/app/components/containers/my-post/my-post.component';
 
 @Component({
   selector: 'app-user-profile-view',
   templateUrl: './user-profile-view.page.html',
   styleUrls: ['./user-profile-view.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterLink]
+  imports: [IonicModule, CommonModule, FormsModule, RouterLink, MyPostComponent],
 })
 export class UserProfileViewPage implements OnInit {
   images: string[];

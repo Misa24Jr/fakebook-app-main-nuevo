@@ -24,6 +24,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
   gap: 70px;
 }
 
@@ -34,7 +35,7 @@ body{
 }
 
 .content{
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,5 +157,4 @@ img{
 .msg{
   margin-top: 10%;
 }
-
 

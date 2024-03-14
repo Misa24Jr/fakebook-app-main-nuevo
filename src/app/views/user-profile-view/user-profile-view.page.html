@@ -16,6 +16,8 @@
       <img class="icono" src="../../../assets/person-outline.svg">
       <h3 class="title">{{ userName }}</h3>
     </div>
+
+
     <div class="MaxB">
       <div class="content" >
         <article class="title-content">
@@ -25,9 +27,11 @@
         <div class="msg">
           <p class="empty-msg" *ngIf="myPosts.length===0">You haven't posted anything yet</p>
         </div>
-        <!-- usar verificar con ngif si myPosts.length es diferente de 0 y renderizar el componente myPost con un ngFor que recorra myPosts  -->
+        <app-my-post></app-my-post>
       </div>
     </div>
+
+
   </div>
 </body>
 </html>

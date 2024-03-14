@@ -6,13 +6,13 @@ import { SwitchService } from 'src/services/switch.service';
 import { GetResult, Preferences } from '@capacitor/preferences';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss'],
+  selector: 'app-my-post',
+  templateUrl: './my-post.component.html',
+  styleUrls: ['./my-post.component.scss'],
   standalone: true,
   imports: [CommonModule, ModalComponent]
 })
-export class PostComponent  implements OnInit {
+export class MyPostComponent  implements OnInit {
   likeClicked: boolean;
   favoriteClicked: boolean;
   modalOpen: boolean;
