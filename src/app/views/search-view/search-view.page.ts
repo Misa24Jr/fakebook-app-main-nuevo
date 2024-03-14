@@ -5,13 +5,14 @@ import { IonicModule } from '@ionic/angular';
 import { RouterLink, Router } from '@angular/router';
 import { alert } from 'src/app/utils/alert';
 import { GetResult, Preferences } from '@capacitor/preferences';
+import { BtnSearchComponent } from 'src/app/components/others/btn-search/btn-search.component';
 
 @Component({
   selector: 'app-search-view',
   templateUrl: './search-view.page.html',
   styleUrls: ['./search-view.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterLink]
+  imports: [IonicModule, CommonModule, FormsModule, RouterLink, BtnSearchComponent] 
 })
 export class SearchViewPage implements OnInit {
   token: GetResult;
