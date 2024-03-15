@@ -6,7 +6,7 @@
 {
     "name": "Jose Mavarez",
     "email": "josemmr311@gmail.com",
-    "password": "jose.3011"
+    "password": "jose.301"
 }
 {
     "name": "Misael Reverol",

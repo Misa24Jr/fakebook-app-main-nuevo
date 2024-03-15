@@ -3,28 +3,36 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+.max{
     background: #FFFFFF;
     font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .MaxA{
+    width: 100%;
     margin-top: 10%;
     height: 10%;
     display: flex;
     justify-content: space-around;
     gap: 10px;
-    // margin-bottom: 5%;
 }
 .patron{
-    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .MaxB{
+    width: 90%;
+    // background: red;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 40px;
 }
+
 .title{
     color: white;
     font-size: 40px;
@@ -148,4 +156,8 @@ p{
 
 .msg{
     width: 80%;
+}
+
+ion-content{
+    --background: #FFFFFF;
 }
