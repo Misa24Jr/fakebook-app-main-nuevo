@@ -46,4 +46,12 @@ export class MyPostComponent  implements OnInit {
   onFavoriteClick() {
     this.favoriteClicked = !this.favoriteClicked;
   }
+
+  onDeleteClick() {
+    console.log('delete');
+  }
+
+  onEditClick(){
+    console.log('edit');
+  }
 }

@@ -1,4 +1,4 @@
-<div>
+
     <div *ngIf="modalOpen == true" class="modal">
       <app-modal></app-modal>
     </div>
@@ -6,10 +6,20 @@
 <div class="content">
   <div class="descrip-content">
     <div class="day-name">
-        <span class="name">name</span>
-        <span class="date">fecha</span>
+      <span class="name">name</span>
+          <div class="trash">
+            <button (click)="onDeleteClick()">
+              <img src="../../../../assets/trash-outline.svg">
+            </button>
+            <button (click)="onEditClick()">
+              <img src="../../../../assets/pencil-outline.svg">
+            </button>
+          </div>
     </div>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam dolore sint quas inventore alias hic veritatis unde dolor beatae, sapiente et! Optio fugiat ea ullam praesentium tenetur dolores esse dicta.</p>
+    <div class="day">
+      <span class="date">fecha</span>
+    </div>
   </div>
   <div class="img-content">
     <img [src]="image" *ngFor="let image of images" class="img">
@@ -35,5 +45,4 @@
     </label>
     </button>
   </div>
-</div>
 </div>
